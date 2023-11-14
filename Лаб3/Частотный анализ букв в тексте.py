@@ -4,10 +4,8 @@ def count_letters(text):
     dict_ = {}
     for symbol in lower_text:
         if symbol.isalpha():
-            if dict_.get(symbol) is None:
-                dict_[symbol] = 1
-            else:
-                dict_[symbol] += 1
+            dict_.setdefault(symbol, 0)
+            dict_[symbol] += 1
     return dict_
 
 
